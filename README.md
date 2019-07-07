@@ -66,3 +66,9 @@ db63fef9f4805eac731877f36f653635865b0a2700aae8cf6af40cb12801ada2
 Code:
 $ ./run Satohash
 2b4f3c56fd7f93d8d2730cc79f6e0f492dcff1e4784cef58f4a1b24554b11b06
+
+# so how do i turn turn the sha256 result into a bitcoin private key????????
+
+I recommend this tool: http://gobittest.appspot.com/PrivateKey
+
+Simply input the sha256 hash of the private key where necessary and press send. This converts to WIF (wallet import format) which is an importable private key
