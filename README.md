@@ -1,8 +1,24 @@
 # satohash
 Satohash - cryptographic key derivation function
 THIS IS AN UPDATED VERSION (THAT ACTUALLY WORKS) OF movedon2otherthings REPO
+
+
 This version includes an updated hash.h header file that has matching declarations for all definitions.
 
+
+# build
+
+Tested on Ubuntu 16.04
+
+1. clone the repo
+
+2. cd to repo
+
+3. gcc satohash.c hash.h -o run
+
+4. *NOTE* on step three, just name the output anything you want. I chose "run" as you can see in instructions.
+
+# usage
 
 The function takes 256bit input (for example a password) and returns a 256bit output (for example a bitcoin private key)
 
@@ -18,25 +34,34 @@ The function also can be mined to create proof of work like bitcoin. But must be
 
 There is also a command line code that hashes stdin or the first argument
 
-Examples:
+# Examples:
 
-empty input (all zeros)
+*empty input (all zeros)
 
 Code:
+
 $ ./run 0000000000000000000000000000000000000000000000000000000000000000
+
 fe077f0af592477a82d8eb871615add4a53a489402dd9b5a09c4565c66db0814
+
 
 $ echo -n "" | ./run 
 fe077f0af592477a82d8eb871615add4a53a489402dd9b5a09c4565c66db0814
+
+
 $ ./run ""
 fe077f0af592477a82d8eb871615add4a53a489402dd9b5a09c4565c66db0814
 
+
 hello world
+
+
 Code:
 $ ./run satohash
+
 db63fef9f4805eac731877f36f653635865b0a2700aae8cf6af40cb12801ada2
 
-Demonstrate the avalanche effect, changing one letter changes whole output
+*Demonstrate the avalanche effect, changing one letter changes whole output
 
 Code:
 $ ./run Satohash
