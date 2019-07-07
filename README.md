@@ -69,6 +69,36 @@ $ ./run Satohash
 
 # so how do i turn turn the sha256 result into a bitcoin private key????????
 
-I recommend this tool: http://gobittest.appspot.com/PrivateKey
+Here is an example:
+
+1.) Take a private key (Below is the HEX representation of binary value--this is the sha256 hash returned from satohash)
+
+f3bc5e754c621ed5f7a77566cd5ec425a395bedfefe5ef342412cb6ce7e51505
+
+2.) Add a 0x80 byte in front of it
+
+80f3bc5e754c621ed5f7a77566cd5ec425a395bedfefe5ef342412cb6ce7e51505
+
+3.) Perform SHA-256 hash on the extended key
+
+echo -n '80f3bc5e754c621ed5f7a77566cd5ec425a395bedfefe5ef342412cb6ce7e51505' | xxd -r -p | sha256sum -b
+
+76d79e77bcf6e323cfa2fd256e51378734cf1b149355d2236c27a2a71045b96b
+
+4.) Perform SHA-256 hash on result of SHA-256 hash
+
+echo -n '76d79e77bcf6e323cfa2fd256e51378734cf1b149355d2236c27a2a71045b96b' | xxd -r -p | sha256sum -b
+
+36f8dee4526fd10ec69f67bc097ff6c667298438aa5fa5bdc41b1b4a34a9d784
+
+5.) Take the first 4 bytes of the second SHA-256 hash, this is the checksum
+
+36f8dee4 
+
+6.) Add the 4 checksum bytes from point 5 at the end of the extended key from point 2
+
+80f3bc5e754c621ed5f7a77566cd5ec425a395bedfefe5ef342412cb6ce7e5150536f8dee4
+
+7.) Convert the result from a byte string into Base58 to get it into the Base58Check format. This is also known as the Wallet Import Format; I recommend this tool: http://gobittest.appspot.com/PrivateKey
 
 Simply input the sha256 hash of the private key where necessary and press send. This converts to WIF (wallet import format) which is an importable private key
