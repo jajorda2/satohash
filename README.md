@@ -1,5 +1,8 @@
 # satohash
 Satohash - cryptographic key derivation function
+THIS IS AN UPDATED VERSION (THAT ACTUALLY WORKS) OF movedon2otherthings REPO
+This version includes an updated hash.h header file that has matching declarations for all definitions.
+
 
 The function takes 256bit input (for example a password) and returns a 256bit output (for example a bitcoin private key)
 
