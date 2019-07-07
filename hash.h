@@ -12,6 +12,7 @@ extern "C" {
 #endif
 
 inline
+uint64_t hashA0(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashA0(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	uint64_t i = (c >> 56) +
 		((((w >> +0) & 1) - 1) & 0xe7933f0df7b5) +
@@ -535,6 +536,7 @@ uint64_t hashA0(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashA1(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashA1(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	uint64_t i = (c >> 56) +
 		((((w >> +0) & 1) - 1) & 0xbfbafcc84fc8) +
@@ -1058,6 +1060,7 @@ uint64_t hashA1(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashA2(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashA2(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	uint64_t i = (c >> 56) +
 		((((w >> +0) & 1) - 1) & 0x7739f63e85e6) +
@@ -1582,6 +1585,7 @@ uint64_t hashA2(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashA3(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashA3(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	uint64_t i = (c >> 56) +
 		((((w >> +0) & 1) - 1) & 0x8aaed623b715) +
@@ -2106,6 +2110,7 @@ uint64_t hashA3(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashA4(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashA4(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	return ((c >> 56) +
 		((((w >> +0) & 1) - 1) & 0xd2b3b058829a771c) +
@@ -2626,6 +2631,7 @@ uint64_t hashA4(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashB0(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashB0(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	uint64_t i = (c >> 56) +
 		((((w >> +0) & 1) - 1) & 0x210757657b79) +
@@ -3150,6 +3156,7 @@ uint64_t hashB0(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashB1(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashB1(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	uint64_t i = (c >> 56) +
 		((((w >> +0) & 1) - 1) & 0xb2bc8debf045) +
@@ -3674,6 +3681,7 @@ uint64_t hashB1(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashB2(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashB2(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	uint64_t i = (c >> 56) +
 		((((w >> +0) & 1) - 1) & 0x2864e6eeb54a) +
@@ -4198,6 +4206,7 @@ uint64_t hashB2(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashB3(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashB3(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	uint64_t i = (c >> 56) +
 		((((w >> +0) & 1) - 1) & 0x02e931e6f830) +
@@ -4722,6 +4731,7 @@ uint64_t hashB3(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 }
 
 inline
+uint64_t hashB4(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c);
 uint64_t hashB4(uint64_t w, uint64_t x, uint64_t y, uint64_t z, uint64_t c) {
 	return ((c >> 56) +
 		((((w >> +0) & 1) - 1) & 0xac7a3b9c21d02f1f) +
